@@ -1,18 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Enemy;
 using UnityEngine;
 
-public class EnemyBase : MonoBehaviour
+public abstract class EnemyBase : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    protected int _currentHealth;
+    protected bool _isAlive;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    protected abstract IEnumerator Attack();
+    protected abstract IEnumerator Move();
+    
 }
