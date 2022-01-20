@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using DefaultNamespace.Object_Pooling;
+using UnityEngine;
 
 namespace DefaultNamespace.EnemyWeapons
 {
@@ -7,7 +8,8 @@ namespace DefaultNamespace.EnemyWeapons
     {
         public override void Fire()
         {
-            Debug.Log("fire in "+ Player.Instance.gameObject.name);
+            var bullet = PoolManager.Instance.GetEnemyBullet(PoolManager.EnemyBulletType.RedEnemyBullet);
+            bullet.transform.position = new Vector3(0, 2, 0);
         }
     }
 }
