@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf420a43c781427eb8dd9524c1ea5e19, type: 3}
   m_Name: SingleEnemyWeapon
   m_EditorClassIdentifier: 
+  bulletType: 0
+  _angleInDegrees: 30

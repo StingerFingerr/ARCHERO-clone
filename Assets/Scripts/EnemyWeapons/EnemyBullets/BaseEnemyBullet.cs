@@ -3,8 +3,10 @@ using UnityEngine;
 
 namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 {
-    public class BaseEnemyBullet: MonoBehaviour
+    public abstract class BaseEnemyBullet: MonoBehaviour, ILaunchedBullet
     {
         [SerializeField] private PoolManager.EnemyBulletType type;
+        [SerializeField] private int _damage;
+        public abstract void RunBullet(Vector3 velocity);
     }
 }

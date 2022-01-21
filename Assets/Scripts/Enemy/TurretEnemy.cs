@@ -12,6 +12,8 @@ namespace Enemy
         
         [SerializeField] private BaseEnemyWeapon _weapon;
         [SerializeField] private int _reloadingTime;
+
+        [SerializeField] private Transform weaponTransform;
         
         private void OnEnable()
         {
@@ -31,12 +33,13 @@ namespace Enemy
 
         private void Update()
         {
-            transform.rotation = Quaternion.LookRotation(Player.Instance.Position - transform.position);
+            Vector3 rot = Player.Instance.Position - transform.position;
+            transform.rotation = Quaternion.LookRotation(new Vector3(rot.x,0,rot.z) , Vector3.up);
         }
 
         protected override IEnumerator Attack()
         {
-            _weapon.Fire();
+            _weapon.Fire(weaponTransform);
             yield break;
         }
         

@@ -14,11 +14,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy
+  - EnemyBullet
+  - PlayerBullet
+  - Walls and Ground
   - 
   - 
   - 

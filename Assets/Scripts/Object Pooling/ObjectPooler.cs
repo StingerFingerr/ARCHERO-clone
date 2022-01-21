@@ -41,7 +41,7 @@ namespace DefaultNamespace.Object_Pooling
         {
             foreach (var objInPool in _pool[type])
             {
-                if (!objInPool.gameObject.activeInHierarchy)
+                if (!objInPool.activeSelf)
                 {
                     obj = objInPool;
                     return true;

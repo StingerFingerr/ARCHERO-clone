@@ -8,6 +8,6 @@ namespace DefaultNamespace.EnemyWeapons
     {
         public PoolManager.EnemyBulletType bulletType;
         
-        public abstract void Fire();
+        public abstract void Fire(Transform weaponTransform);
     }
 }
