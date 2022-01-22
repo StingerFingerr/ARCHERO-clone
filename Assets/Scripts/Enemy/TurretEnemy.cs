@@ -11,7 +11,7 @@ namespace Enemy
         [SerializeField] private int _health;
         
         [SerializeField] private BaseEnemyWeapon _weapon;
-        [SerializeField] private int _reloadingTime;
+        [SerializeField][Range(.2f,5f)] private float _reloadingTime;
 
         [SerializeField] private Transform weaponTransform;
         
