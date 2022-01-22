@@ -714,8 +714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 10
-  _weapon: {fileID: 11400000, guid: 71f857c58cc013e4685a7a1716fba894, type: 2}
-  _reloadingTime: 0.5
+  _weapon: {fileID: 11400000, guid: 378103afa319ca24fa9247cbeaf1f7bf, type: 2}
+  _reloadingTime: 3.07
   weaponTransform: {fileID: 1380944279}
 --- !u!1001 &1079662312
 PrefabInstance:
