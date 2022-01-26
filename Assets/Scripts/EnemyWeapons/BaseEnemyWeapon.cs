@@ -6,7 +6,7 @@ namespace DefaultNamespace.EnemyWeapons
 {
     public abstract class BaseEnemyWeapon: ScriptableObject
     {
-        public PoolManager.EnemyBulletType bulletType;
+        
         
         public abstract void Fire(Transform weaponTransform);
     }
