@@ -5,6 +5,7 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 {
     public abstract class BaseBulletWeapon: BaseEnemyWeapon
     {
+        [SerializeField] private PoolManager.EnemyBulletType bulletType;
         [SerializeField][Range(0f,1f)] private float _spreadRadius;
         
 
