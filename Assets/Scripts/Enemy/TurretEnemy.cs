@@ -8,7 +8,6 @@ namespace Enemy
 {
     public class TurretEnemy: EnemyBase,ITarget
     {
-        [SerializeField] private int _health;
         
         [SerializeField] private BaseEnemyWeapon _weapon;
         [SerializeField][Range(.2f,5f)] private float _reloadingTime;
@@ -17,7 +16,7 @@ namespace Enemy
         
         private void OnEnable()
         {
-            _currentHealth = _health;
+            _currentHealth = _maxHealth;
             _isAlive = true;
             
             if(_weapon==null)
@@ -58,9 +57,11 @@ namespace Enemy
         {
             if(!_isAlive)
                 return;
-            _health -= damage;
-            Debug.Log(damage);
-            if (_health <= 0)
+            _currentHealth -= damage;
+            
+            _healthBar?.SetNormalizedValue(_currentHealth/(float)_maxHealth);
+            
+            if (_currentHealth <= 0)
                 Death();
         }
 
