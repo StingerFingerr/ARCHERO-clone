@@ -1,8 +1,12 @@
 ﻿
+using UnityEngine;
+
 namespace Enemy
 {
     public interface ITarget
     {
-        void SetDamage(int damage);
+        bool IsAlive { get; set; }
+        bool IsVisible { get; set; }
+        Vector3 GetPosition();
     }
 }
