@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Enemy
 {
-    public class TurretEnemy: EnemyBase
+    public class TurretEnemy: EnemyBase,ITarget
     {
         
         [SerializeField] private BaseEnemyWeapon _weapon;
@@ -14,15 +14,10 @@ namespace Enemy
 
         [SerializeField] private Transform weaponTransform;
         
-        public override bool IsVisible { get; set; }
-
-        
         private void OnEnable()
         {
             _currentHealth = _maxHealth;
-            
             _isAlive = true;
-            IsVisible = true;
             
             if(_weapon==null)
                 return;
@@ -57,11 +52,8 @@ namespace Enemy
             }
 
         }
-
-
-        public override Vector3 GetPosition() => transform.position;
-
-        public override void SetDamage(int damage)
+        
+        public void SetDamage(int damage)
         {
             if(!_isAlive)
                 return;

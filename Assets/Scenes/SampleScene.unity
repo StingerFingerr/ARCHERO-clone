@@ -727,7 +727,7 @@ PrefabInstance:
     - target: {fileID: 6823801301828922112, guid: 8b9fb0bc2c4e7254d84a32877729d978,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6823801301828922112, guid: 8b9fb0bc2c4e7254d84a32877729d978,
         type: 3}
@@ -975,7 +975,7 @@ PrefabInstance:
     - target: {fileID: 6823801301828922112, guid: 8b9fb0bc2c4e7254d84a32877729d978,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6823801301828922112, guid: 8b9fb0bc2c4e7254d84a32877729d978,
         type: 3}
@@ -1034,49 +1034,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b9fb0bc2c4e7254d84a32877729d978, type: 3}
---- !u!1 &1005111241
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1005111243}
-  - component: {fileID: 1005111242}
-  m_Layer: 0
-  m_Name: ===Enemy Manager===
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1005111242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005111241}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebb2486e5e1b42a9b43ce3e279a866f3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1005111243
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1005111241}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1007619818 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
@@ -1517,7 +1474,6 @@ GameObject:
   - component: {fileID: 1457181303}
   - component: {fileID: 1457181302}
   - component: {fileID: 1457181301}
-  - component: {fileID: 1457181305}
   - component: {fileID: 1457181304}
   m_Layer: 8
   m_Name: Player
@@ -1592,18 +1548,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1457181305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1457181300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 340866360a034ae89d20dcaa6e87de38, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1629578556
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2073,7 +2017,7 @@ GameObject:
   - component: {fileID: 2045737723}
   - component: {fileID: 2045737722}
   m_Layer: 0
-  m_Name: ===Pool Manager===
+  m_Name: ===Pool Managet===
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
