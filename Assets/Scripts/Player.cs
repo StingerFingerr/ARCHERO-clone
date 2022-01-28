@@ -39,6 +39,7 @@ namespace DefaultNamespace
             _animator = GetComponent<Animator>();
             _playerBow = GetComponent<PlayerBow>();
 
+            EnemyBase.OnEnemyKilled.AddListener(CancelTarget);
         }
 
         private void FixedUpdate()
@@ -81,6 +82,7 @@ namespace DefaultNamespace
             lookDir.y = 0;
             transform.localRotation = Quaternion.LookRotation(lookDir);
         }
+        
         private void SetState(Vector3 moveDir)
         {
             State previousState = currentState;
@@ -99,6 +101,12 @@ namespace DefaultNamespace
             }            
             if(previousState!=currentState)
                 _animator.SetTrigger(currentState.ToString());
+        }
+
+        private void CancelTarget(ITarget target)
+        {
+            if (_nearestTarget == target)
+                _nearestTarget = null;
         }
     }
 }
