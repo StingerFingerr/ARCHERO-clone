@@ -15,7 +15,6 @@ namespace Enemy
         [SerializeField] private Transform weaponTransform;
         
         public override bool IsVisible { get; set; }
-
         
         private void OnEnable()
         {
@@ -46,7 +45,6 @@ namespace Enemy
             _weapon.Fire(weaponTransform);
             yield break;
         }
-        
         protected override IEnumerator Move()
         {
             while (true)
@@ -73,10 +71,12 @@ namespace Enemy
                 Death();
         }
 
-        private void Death()
+        protected override void Death()
         {
             _isAlive = false;
-            Debug.Log("death");
+            OnEnemyKilled.Invoke(this);
+            
+            gameObject.SetActive(false);
         }
     }
 }
