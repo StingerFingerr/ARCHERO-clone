@@ -25,8 +25,10 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
         set => _isAlive = value;
     }
     public abstract bool IsVisible { get; set; }
+    
     public abstract Vector3 GetPosition();
-
+    public abstract Transform GetTransform();
+    
     public abstract void SetDamage(int damage);
     protected abstract void Death();
 }

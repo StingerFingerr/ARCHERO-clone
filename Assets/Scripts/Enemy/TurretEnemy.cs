@@ -58,6 +58,7 @@ namespace Enemy
 
 
         public override Vector3 GetPosition() => transform.position;
+        public override Transform GetTransform() => transform;
 
         public override void SetDamage(int damage)
         {
