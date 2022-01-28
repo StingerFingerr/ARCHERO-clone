@@ -2091,8 +2091,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ba76635fb2460fa9b6175db4400e3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletPoolObjectsList:
+  _enemyBulletsPoolObjects:
   - {fileID: 11400000, guid: 17b6159f16657f948846d3ebb3f551f4, type: 2}
+  _playerBulletsPoolObjects:
+  - {fileID: 11400000, guid: 44c02f089a7390844b752758526f66c5, type: 2}
 --- !u!4 &2045737723
 Transform:
   m_ObjectHideFlags: 0

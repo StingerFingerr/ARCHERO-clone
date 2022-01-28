@@ -6,17 +6,13 @@ namespace DefaultNamespace.Player_weapon_system
 {
     public class PlayerBow: MonoBehaviour
     {
+        private bool _isCanShooting;
 
         
-
-        public void PauseShooting()
-        {
-            
-        }
-
-        public void ContinueShooting()
-        {
-            
-        }
+        
+        
+        
+        public void PauseShooting() => _isCanShooting = false;
+        public void ContinueShooting() => _isCanShooting = true;
     }
 }

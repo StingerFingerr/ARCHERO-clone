@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed9d67370231444baab4f439caea3383, type: 3}
   m_Name: StandardPlayerBullet
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 0}
-  startCapacity: 0
+  objectPrefab: {fileID: 9036693478746770777, guid: 0ab8b411f7b4cdf43ba5459ce2314037,
+    type: 3}
+  startCapacity: 10
   bulletType: 0
