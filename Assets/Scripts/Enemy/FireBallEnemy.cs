@@ -30,7 +30,7 @@ namespace Enemy
 
         private void Start()
         {
-            _navMeshAgent.SetDestination(GetNewDestination());
+            //_navMeshAgent.SetDestination(GetNewDestination());
         }
 
         private void OnEnable()
@@ -51,27 +51,34 @@ namespace Enemy
         
         protected override IEnumerator Attack()
         {
-            yield return new WaitForSeconds(_reloadingTime);
-            _navMeshAgent.isStopped = true;
-            transform.rotation = Quaternion.LookRotation(Player.Instance.Position - transform.position);
-            _weapon.Fire(weaponTransform);
-            _navMeshAgent.isStopped = false;
-            
-            _navMeshAgent.SetDestination(GetNewDestination());
-            StartCoroutine(Attack());
+            while (true)
+            {
+                yield return new WaitForSeconds(_reloadingTime/2);
+                _navMeshAgent.ResetPath();
+                yield return new WaitForSeconds(_reloadingTime/2);
+                
+                //transform.rotation = Quaternion.LookRotation(Player.Instance.Position - transform.position);
+                _weapon.Fire(weaponTransform);
+                
+                
+                if (_navMeshAgent.hasPath is false)
+                    _navMeshAgent.SetDestination(GetNewDestination());
+            }
         }
 
         protected override IEnumerator Move()
         {
+            yield return null;
+            _navMeshAgent.SetDestination(GetNewDestination());
             StartCoroutine(Attack());
             while (true)
             {
-                if (_navMeshAgent.pathStatus == NavMeshPathStatus.PathInvalid ||
-                    _navMeshAgent.pathStatus == NavMeshPathStatus.PathComplete)
+                if (_navMeshAgent.velocity.magnitude == 0)
                 {
-                    transform.rotation = Quaternion.Lerp(transform.rotation,
-                        Quaternion.LookRotation(Vector3.one - transform.position),Time.deltaTime);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, 
+                        Quaternion.LookRotation(Player.Instance.Position - transform.position),Time.deltaTime * 10);
                 }
+                yield return null;
             }
             
         }
@@ -83,8 +90,12 @@ namespace Enemy
             offset.x = Random.Range(-_horizontalWalkingRadius, _horizontalWalkingRadius);
             offset.y = 0;
             offset.z = Random.Range(-_verticalWalkingRadius, _verticalWalkingRadius);
-    
-            return transform.position + offset;
+
+            Vector3 result = transform.position + offset;
+            result.x = Mathf.Clamp(result.x, -5, 5);
+            result.z = Mathf.Clamp(result.z, -8, 8);
+            
+            return result;
         }
     }
 }
