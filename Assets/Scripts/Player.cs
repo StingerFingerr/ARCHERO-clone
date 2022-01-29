@@ -18,6 +18,8 @@ namespace DefaultNamespace
         [SerializeField] private FixedJoystick _fixedJoystick;
         [SerializeField] private float _movingSpeed;
         [SerializeField][Range(.01f,.9f)] private float _validJoystickDistance = .2f;
+
+        [SerializeField] private GameObject _targetMarker;
         
         public static Player Instance;
         public Vector3 Position => transform.position;
@@ -28,7 +30,6 @@ namespace DefaultNamespace
         private Animator _animator;
         private State currentState;
 
-        private Vector3 _nearestTargetPos;
         private ITarget _nearestTarget;
         
         private void Awake()
@@ -89,15 +90,27 @@ namespace DefaultNamespace
             if (moveDir == Vector3.zero)
             {
                 if(_nearestTarget is null)
-                    if (EnemyManager.Instance.GetNearestTarget(out _nearestTarget)) 
+                    if (EnemyManager.Instance.GetNearestTarget(out _nearestTarget))
+                    {
                         currentState = State.Attack;
+
+                        _targetMarker.transform.position = _nearestTarget.GetPosition();
+                        _targetMarker.transform.parent = _nearestTarget.GetTransform();
+                        _targetMarker.SetActive(true);
+                    }
                     else
-                     currentState = State.Idle;
+                    {
+                        currentState = State.Idle;
+
+                        
+                    }
             }
             else
             {
-                _nearestTarget = null;
                 currentState = State.Run;
+                
+                _nearestTarget = null;
+                _targetMarker.SetActive(false);
             }            
             if(previousState!=currentState)
                 _animator.SetTrigger(currentState.ToString());

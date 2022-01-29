@@ -11,25 +11,39 @@ namespace DefaultNamespace.Object_Pooling
         public enum EnemyBulletType
         {
             RedEnemyBullet,
-            Fire,
+            FireBall,
         }
 
-        [SerializeField] private List<EnemyBulletPoolObject> _bulletPoolObjectsList;
-        private ObjectPooler<EnemyBulletType> _bulletPool;
+        public enum PlayerBulletType
+        {
+            StandardArrow,
+            
+        }
 
+        [SerializeField] private List<EnemyBulletPoolObject> _enemyBulletsPoolObjects;
+        private ObjectPooler<EnemyBulletType> _enemyBulletsPool;
+
+        [SerializeField] private List<PlayerBulletPoolObject> _playerBulletsPoolObjects;
+        private ObjectPooler<PlayerBulletType> _playerBulletsPool;
 
         private void Awake()
         {
             Instance = this;
             
-            _bulletPool = new ObjectPooler<EnemyBulletType>(this, transform, new List<BasePoolObject<EnemyBulletType>>(_bulletPoolObjectsList));
-            
-            
+            _enemyBulletsPool = new ObjectPooler<EnemyBulletType>(this, transform, 
+                new List<BasePoolObject<EnemyBulletType>>(_enemyBulletsPoolObjects));
+            _playerBulletsPool = new ObjectPooler<PlayerBulletType>(this, transform,
+                new List<BasePoolObject<PlayerBulletType>>(_playerBulletsPoolObjects));
+
         }
 
+        public GameObject GetPlayerBullet(PlayerBulletType bulletType)
+        {
+            return _playerBulletsPool.GetObjectFromPool(bulletType);
+        }
         public GameObject GetEnemyBullet(EnemyBulletType bulletType)
         {
-            return _bulletPool.GetObjectFromPool(bulletType);
+            return _enemyBulletsPool.GetObjectFromPool(bulletType);
         }
 
         public GameObject InstantiateObject(GameObject prefab, Transform holder)
