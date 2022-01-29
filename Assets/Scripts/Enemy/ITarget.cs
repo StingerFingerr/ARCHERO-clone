@@ -7,6 +7,8 @@ namespace Enemy
     {
         bool IsAlive { get; set; }
         bool IsVisible { get; set; }
+        
         Vector3 GetPosition();
+        Transform GetTransform();
     }
 }

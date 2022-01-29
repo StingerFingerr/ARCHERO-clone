@@ -66,6 +66,8 @@ namespace DefaultNamespace.Object_Pooling
             
             foreach (var poolItem in _poolObjectsSettings)
             {
+                if(_pool.ContainsKey(poolItem.GetType())) continue;
+                
                 List<GameObject> list = new List<GameObject>(poolItem.startCapacity);
                 var type = poolItem.GetType();
                 _pool.Add(type,list);
