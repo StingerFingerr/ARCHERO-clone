@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: BurstEnemyWeapon
   m_EditorClassIdentifier: 
   bulletType: 0
-  _spreadRadius: 0.5
+  _spreadRadius: 0.8
   countInBurst: 4
   _reloadTimeBetweenShots: 0.2

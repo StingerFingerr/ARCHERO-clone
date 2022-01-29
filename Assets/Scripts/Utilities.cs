@@ -6,12 +6,10 @@ namespace DefaultNamespace
     {
         public static class Shooting
         {
-            public static Vector3 GetVelocity(Transform weaponTransform, Vector3 targetPosition)
+            public static Vector3 GetVelocity(Transform weaponTransform, float spreadRadius)
             {
-                Vector3 dir = targetPosition - weaponTransform.position;
+                Vector3 dir = Player.Instance.Position - weaponTransform.position;
                 Vector3 dirXZ = new Vector3(dir.x, 0, dir.z);
-
-                weaponTransform.parent.rotation = Quaternion.LookRotation(dirXZ); // re-aiming taking spreading
                 
                 float x = dirXZ.magnitude;
                 float y = dir.y;
@@ -21,7 +19,14 @@ namespace DefaultNamespace
                 float v2 = (Physics.gravity.y * x * x) / (2 * (y - Mathf.Tan(angleInRadians) * x) * Mathf.Pow(Mathf.Cos(angleInRadians),2));
 
                 float v = Mathf.Sqrt(Mathf.Abs(v2));
-                return weaponTransform.forward * v;
+
+                Vector3 res = weaponTransform.forward * v;
+
+                res.x += Random.Range(-spreadRadius, spreadRadius);
+                res.y += Random.Range(-spreadRadius, spreadRadius);
+                res.z += Random.Range(0, spreadRadius);
+                
+                return res;
             }
         }
 
