@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletType: 0
   _spreadRadius: 0.8
-  countInBurst: 4
+  countInBurst: 3
   _reloadTimeBetweenShots: 0.2

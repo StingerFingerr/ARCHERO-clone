@@ -21,10 +21,12 @@ namespace DefaultNamespace
                 float v = Mathf.Sqrt(Mathf.Abs(v2));
 
                 Vector3 res = weaponTransform.forward * v;
-
+                if (spreadRadius == 0)
+                    return res;
+                
                 res.x += Random.Range(-spreadRadius, spreadRadius);
                 res.y += Random.Range(-spreadRadius, spreadRadius);
-                res.z += Random.Range(0, spreadRadius);
+                res.z += Random.Range(-spreadRadius, spreadRadius);
                 
                 return res;
             }
