@@ -1264,7 +1264,7 @@ PrefabInstance:
     - target: {fileID: 1893117146933817289, guid: 11609265cd0121a48b9ff50ad28c3805,
         type: 3}
       propertyPath: _reloadingTime
-      value: 2.01
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 1893117146933817289, guid: 11609265cd0121a48b9ff50ad28c3805,
         type: 3}
@@ -1274,7 +1274,7 @@ PrefabInstance:
     - target: {fileID: 1893117146933817295, guid: 11609265cd0121a48b9ff50ad28c3805,
         type: 3}
       propertyPath: m_Name
-      value: FireBall enemy (1)
+      value: FireBall enemy
       objectReference: {fileID: 0}
     - target: {fileID: 1893117146933817295, guid: 11609265cd0121a48b9ff50ad28c3805,
         type: 3}

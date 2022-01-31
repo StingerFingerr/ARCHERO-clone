@@ -4774,6 +4774,7 @@ GameObject:
   - component: {fileID: 4677295714318250221}
   - component: {fileID: 3683420884737480589}
   - component: {fileID: 3288860055285097979}
+  - component: {fileID: 8388030779493036884}
   m_Layer: 10
   m_Name: Fire trail
   m_TagString: Untagged
@@ -9536,3 +9537,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8388030779493036884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4524995260054765005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d0827b1418a488db9b2855aca25b144, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
