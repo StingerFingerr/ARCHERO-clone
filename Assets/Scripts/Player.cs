@@ -90,7 +90,7 @@ namespace DefaultNamespace
             if (moveDir == Vector3.zero)
             {
                 if(_nearestTarget is null)
-                    if (EnemyManager.Instance.GetNearestTarget(out _nearestTarget))
+                    if (EnemyManager.Instance.TryGetNearestTarget(out _nearestTarget))
                     {
                         currentState = State.Attack;
 
