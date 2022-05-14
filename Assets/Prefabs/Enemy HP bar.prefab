@@ -131,7 +131,7 @@ MonoBehaviour:
     m_NumColorKeys: 3
     m_NumAlphaKeys: 2
   _fillImage: {fileID: 7347134712938922609}
-  _posOffset: {x: 0, y: 4, z: 0}
+  _posOffset: {x: 0, y: 5, z: 0}
 --- !u!1 &3534798638879580876
 GameObject:
   m_ObjectHideFlags: 0
