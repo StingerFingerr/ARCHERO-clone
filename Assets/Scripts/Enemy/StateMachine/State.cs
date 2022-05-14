@@ -9,7 +9,7 @@ public abstract class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
 
-    protected Player Target { get; set; }
+    protected Transform Target { get; set; }
     protected Animator Animator;
 
     private void Awake()
@@ -17,12 +17,7 @@ public abstract class State : MonoBehaviour
         Animator = GetComponent<Animator>();
     }
 
-    private void OnEnable()
-    {
-
-    }
-
-    public void Enter(Player target)
+    public void Enter(Transform target)
     {
         if (enabled == false)
         {
