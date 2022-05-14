@@ -42,6 +42,7 @@ namespace Enemy
 
             StartCoroutine(Move());
         }
+
         private void OnDisable()
         {
             StopAllCoroutines();
