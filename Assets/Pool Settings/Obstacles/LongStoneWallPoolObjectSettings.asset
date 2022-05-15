@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f2506291196347943d43495f7fc8f, type: 3}
+  m_Name: LongStoneWallPoolObjectSettings
+  m_EditorClassIdentifier: 
+  objectPrefab: {fileID: 1156685054582838486, guid: d29e47764101daa40bcbebe0cb7b18d5,
+    type: 3}
+  startCapacity: 2
+  _obstacleType: 1
