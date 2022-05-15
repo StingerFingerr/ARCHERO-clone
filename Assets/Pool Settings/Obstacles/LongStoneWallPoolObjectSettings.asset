@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf420a43c781427eb8dd9524c1ea5e19, type: 3}
-  m_Name: SingleEnemyWeapon
+  m_Script: {fileID: 11500000, guid: c88f2506291196347943d43495f7fc8f, type: 3}
+  m_Name: LongStoneWallPoolObjectSettings
   m_EditorClassIdentifier: 
-  _shootingSound: {fileID: 8300000, guid: 21c9405d239bc274abf800931f2283ca, type: 3}
-  bulletType: 0
-  _spreadRadius: 0.5
+  objectPrefab: {fileID: 1156685054582838486, guid: d29e47764101daa40bcbebe0cb7b18d5,
+    type: 3}
+  startCapacity: 2
+  _obstacleType: 1
