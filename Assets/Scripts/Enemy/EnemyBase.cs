@@ -9,7 +9,6 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
 {
     public class TargetEvent : UnityEvent<ITarget> { }
 
-    [SerializeField] private float _moveSpeed;
     [SerializeField] protected Player _target;
     [SerializeField] protected EnemyHpBar _healthBar;
     [SerializeField] protected int _maxHealth;
@@ -18,10 +17,8 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
     public abstract bool IsVisible { get; set; }
 
     public static readonly TargetEvent OnEnemyKilled = new TargetEvent();
-    public float MoveSpeed { get => _moveSpeed; protected set => _moveSpeed = value; }
 
-    protected abstract IEnumerator Attack();
-    protected abstract IEnumerator Move();
+    public abstract void Attack();
 
     public bool IsAlive
     {
@@ -30,7 +27,6 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
     }
 
     public Vector3 GetPosition() => transform.position;
-
     public Transform GetTransform() => transform;
 
     public virtual void SetDamage(int damage)
@@ -54,7 +50,6 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
     {
         _isAlive = false;
         OnEnemyKilled.Invoke(this);
-            
         gameObject.SetActive(false);
     }
 

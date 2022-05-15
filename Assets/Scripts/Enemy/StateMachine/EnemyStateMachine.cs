@@ -4,18 +4,18 @@ using UnityEngine;
 using DefaultNamespace;
 
 [RequireComponent(typeof(EnemyBase))]
-public class EnemyBaseStateMachine : MonoBehaviour
+public class EnemyStateMachine : MonoBehaviour
 {
     [SerializeField] private State _firstState;
 
     private State _currentState;
-    private Player _target;
+    private Transform _target;
 
     public State CurrentState => _currentState;
 
     private void Start()
     {
-        _target = GetComponent<EnemyBase>().GetTarget();
+        _target = GetComponent<EnemyBase>().GetTarget().transform;
         Reset(_firstState);
     }
 

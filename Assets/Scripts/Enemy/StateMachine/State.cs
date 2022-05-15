@@ -2,27 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DefaultNamespace;
+using UnityEngine.AI;
 
 [RequireComponent(typeof(Animator))]
-
+[RequireComponent(typeof(NavMeshAgent))]
 public abstract class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
-
-    protected Player Target { get; set; }
+    protected Transform Target { get; set; }
     protected Animator Animator;
+    protected NavMeshAgent _navMeshAgent;
 
     private void Awake()
     {
         Animator = GetComponent<Animator>();
+        _navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    private void OnEnable()
-    {
-
-    }
-
-    public void Enter(Player target)
+    public void Enter(Transform target)
     {
         if (enabled == false)
         {
