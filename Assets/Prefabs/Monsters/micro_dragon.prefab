@@ -389,9 +389,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bddbfa6ace475b93ce3d2c5d9618c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _target: {fileID: 0}
   _healthBar: {fileID: 4982327746482092970}
   _maxHealth: 1000
+  _attackClip: {fileID: 8300000, guid: be2ee8e6f7bf5d04aa4e861c27aa8a57, type: 3}
   _weapon: {fileID: 11400000, guid: 4b4046c9f82d969489ecc422622b8466, type: 2}
   _reloadingTime: 1.86
   weaponTransform: {fileID: 900468707}

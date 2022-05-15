@@ -11,6 +11,7 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 
         protected void ShootBullet(Transform weaponTransform)
         {
+            OnWeaponShot.Invoke(this);
             var bullet = PoolManager.Instance.GetEnemyBullet(bulletType);
             bullet.transform.position = weaponTransform.position;
             bullet.GetComponent<BaseEnemyBullet>().RunBullet(
