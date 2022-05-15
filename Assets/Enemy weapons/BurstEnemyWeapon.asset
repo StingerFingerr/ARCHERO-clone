@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2a398da88074a6d94825840a27522c1, type: 3}
   m_Name: BurstEnemyWeapon
   m_EditorClassIdentifier: 
+  _shootingSound: {fileID: 8300000, guid: be2ee8e6f7bf5d04aa4e861c27aa8a57, type: 3}
   bulletType: 0
   _spreadRadius: 0.8
   countInBurst: 3

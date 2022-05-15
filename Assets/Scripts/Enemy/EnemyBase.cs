@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Enemy;
 using DefaultNamespace;
@@ -9,13 +10,14 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
 {
     public class TargetEvent : UnityEvent<ITarget> { }
 
-    //[SerializeField] protected Player _target;
     [SerializeField] protected EnemyHpBar _healthBar;
     [SerializeField] protected int _maxHealth;
+    [SerializeField] public AudioClip _attackClip;
+    
     protected int _currentHealth;
     protected bool _isAlive;
     public abstract bool IsVisible { get; set; }
-
+    
     public static readonly TargetEvent OnEnemyKilled = new TargetEvent();
 
     public abstract void Attack();

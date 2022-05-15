@@ -21,6 +21,7 @@ namespace DefaultNamespace.EnemyWeapons
         {
             for (int i = 0; i < countInBurst; i++)
             {
+                OnWeaponShot.Invoke(this);
                 ShootBullet(weaponTransform);
                 yield return new WaitForSeconds(_reloadTimeBetweenShots);
             }
