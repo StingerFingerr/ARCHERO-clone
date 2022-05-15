@@ -67,9 +67,7 @@ namespace DefaultNamespace
                     _playerBow.PauseShooting();
                     break;
             }
-        }
-
-        
+        }   
 
         private void Move(Vector3 moveDir)
         {
@@ -100,9 +98,7 @@ namespace DefaultNamespace
                     }
                     else
                     {
-                        currentState = State.Idle;
-
-                        
+                        currentState = State.Idle;  
                     }
             }
             else

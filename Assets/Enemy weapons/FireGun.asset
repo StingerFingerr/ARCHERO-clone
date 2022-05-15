@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FireGun
   m_EditorClassIdentifier: 
   bulletType: 1
-  _spreadRadius: 0
+  _spreadRadius: 1
