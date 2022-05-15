@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf420a43c781427eb8dd9524c1ea5e19, type: 3}
   m_Name: FireGun
   m_EditorClassIdentifier: 
+  _shootingSound: {fileID: 8300000, guid: be2ee8e6f7bf5d04aa4e861c27aa8a57, type: 3}
   bulletType: 1
-  _spreadRadius: 0
+  _spreadRadius: 1

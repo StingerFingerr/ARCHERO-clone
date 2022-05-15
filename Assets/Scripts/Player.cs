@@ -67,9 +67,7 @@ namespace DefaultNamespace
                     _playerBow.PauseShooting();
                     break;
             }
-        }
-
-        
+        }   
 
         private void Move(Vector3 moveDir)
         {
@@ -90,7 +88,7 @@ namespace DefaultNamespace
             if (moveDir == Vector3.zero)
             {
                 if(_nearestTarget is null)
-                    if (EnemyManager.Instance.GetNearestTarget(out _nearestTarget))
+                    if (EnemyManager.Instance.TryGetNearestTarget(out _nearestTarget))
                     {
                         currentState = State.Attack;
 
@@ -100,9 +98,7 @@ namespace DefaultNamespace
                     }
                     else
                     {
-                        currentState = State.Idle;
-
-                        
+                        currentState = State.Idle;  
                     }
             }
             else

@@ -25,7 +25,7 @@ namespace Enemy
         }
 
         
-        public bool GetNearestTarget(out ITarget nearestTarget)
+        public bool TryGetNearestTarget(out ITarget nearestTarget)
         {
             float minDistance = float.MaxValue;
             nearestTarget = null;
