@@ -56,7 +56,6 @@ GameObject:
   - component: {fileID: 1893117146107191005}
   - component: {fileID: 1893117146107191006}
   - component: {fileID: 1893117146107191007}
-  - component: {fileID: 1893117146107191004}
   m_Layer: 9
   m_Name: left eye
   m_TagString: Untagged
@@ -129,19 +128,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1893117146107191004
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893117146107190994}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1893117146733501281
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +208,6 @@ GameObject:
   - component: {fileID: 1893117146814076943}
   - component: {fileID: 1893117146814076936}
   - component: {fileID: 1893117146814076937}
-  - component: {fileID: 1893117146814076942}
   m_Layer: 9
   m_Name: right eye
   m_TagString: Untagged
@@ -295,19 +280,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1893117146814076942
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893117146814076940}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1893117146903047859
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,15 +512,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85bddbfa6ace475b93ce3d2c5d9618c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveSpeed: 0
   _target: {fileID: 0}
   _healthBar: {fileID: 7058613626128458698}
   _maxHealth: 1000
   _weapon: {fileID: 11400000, guid: 4b4046c9f82d969489ecc422622b8466, type: 2}
   _reloadingTime: 4
   weaponTransform: {fileID: 1893117147068537147}
-  _horizontalWalkingRadius: 5
-  _verticalWalkingRadius: 5
 --- !u!195 &1893117146933817294
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -697,7 +666,6 @@ GameObject:
   - component: {fileID: 1893117147071952707}
   - component: {fileID: 1893117147071952716}
   - component: {fileID: 1893117147071952717}
-  - component: {fileID: 1893117147071952706}
   m_Layer: 9
   m_Name: mouse
   m_TagString: Untagged
@@ -770,19 +738,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1893117147071952706
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1893117147071952704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1893117147221042303
 GameObject:
   m_ObjectHideFlags: 0

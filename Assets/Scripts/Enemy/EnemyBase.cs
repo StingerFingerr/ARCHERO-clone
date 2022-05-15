@@ -9,7 +9,7 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
 {
     public class TargetEvent : UnityEvent<ITarget> { }
 
-    [SerializeField] protected Player _target;
+    //[SerializeField] protected Player _target;
     [SerializeField] protected EnemyHpBar _healthBar;
     [SerializeField] protected int _maxHealth;
     protected int _currentHealth;
@@ -43,7 +43,7 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
 
     public Player GetTarget()
     {
-        return _target;
+        return Player.Instance;
     }
 
     protected virtual void Death()

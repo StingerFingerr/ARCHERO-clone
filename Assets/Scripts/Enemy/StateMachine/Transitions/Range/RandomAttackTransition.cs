@@ -18,7 +18,6 @@ public class RandomAttackTransition : Transition
     {
         if (_passedTime >= _transitionTime)
         {
-            Debug.Log("123");
             NeedToTransit = true;
         }
         _passedTime += Time.deltaTime;
