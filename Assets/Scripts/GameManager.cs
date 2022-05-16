@@ -1,12 +1,14 @@
 using DefaultNamespace;
 using Enemy;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private SceneBuilder _sceneBuilder;
+    [SerializeField] private UIManager _UIManager;
     [SerializeField] private Player _player;
     [SerializeField] private Vector3 _playerStartPos;
 
@@ -25,15 +27,14 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        StartGame();
-    }
+    
 
-    public void StartGame()
+    public async void StartGame()
     {
         _level = 0;
         OpenNextLevel();
+        await Task.Delay(900);
+        _UIManager.CloseMenuPanel();
     }
 
     private void DecrementEnemiesCount(ITarget targer)
@@ -45,8 +46,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OpenNextLevel()
+    private async void OpenNextLevel()
     {
+        _UIManager.OpenFadedPanel();
+        await Task.Delay(1000);
+        _UIManager.CloseFadedPanel();
+        if (_level > 1)
+        {
+            
+        }
         _level++;
         _enemiesOnScene = _sceneBuilder.CreateLevel(_level);
         _player.SetTargets(_enemiesOnScene);
