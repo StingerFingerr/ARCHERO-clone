@@ -1,6 +1,7 @@
 using DefaultNamespace;
 using Enemy;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -25,10 +26,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private void Start()
-    {
-        StartGame();
-    }
+    
 
     public void StartGame()
     {
@@ -45,8 +43,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void OpenNextLevel()
+    private async void OpenNextLevel()
     {
+        if(_level > 1)
+        {
+            await Task.Delay(3000);
+        }
         _level++;
         _enemiesOnScene = _sceneBuilder.CreateLevel(_level);
         _player.SetTargets(_enemiesOnScene);
