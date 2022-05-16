@@ -1,4 +1,5 @@
-﻿using DefaultNamespace.Player_weapon_system;
+﻿using DefaultNamespace.Object_Pooling;
+using DefaultNamespace.Player_weapon_system;
 using Enemy;
 using UnityEngine;
 
@@ -88,7 +89,7 @@ namespace DefaultNamespace
             if (moveDir == Vector3.zero)
             {
                 if(_nearestTarget is null)
-                    if (EnemyManager.Instance.TryGetNearestTarget(out _nearestTarget))
+                    if (TryGetNearestTarget(out _nearestTarget))
                     {
                         currentState = State.Attack;
 
@@ -116,6 +117,28 @@ namespace DefaultNamespace
         {
             if (_nearestTarget == target)
                 _nearestTarget = null;
+        }
+
+        public bool TryGetNearestTarget(out ITarget nearestTarget)
+        {
+            float minDistance = float.MaxValue;
+            nearestTarget = null;
+
+            foreach (var target in PoolManager.Instance._enemiesOnScene)
+            {
+                if (target is null) continue;
+                if (target.IsAlive)
+                    if (target.IsVisible)
+                    {
+                        float distance = Vector3.Distance(Player.Instance.Position, target.GetPosition());
+                        if (distance < minDistance)
+                        {
+                            minDistance = distance;
+                            nearestTarget = target;
+                        }
+                    }
+            }
+            return !(nearestTarget is null);
         }
     }
 }
