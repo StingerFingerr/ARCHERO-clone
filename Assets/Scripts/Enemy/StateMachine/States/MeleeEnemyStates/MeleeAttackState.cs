@@ -11,8 +11,9 @@ public class MeleeAttackState : State
     private float _passedTime = 0;
     private MeleeAttackEnemy _meleeAttackEnemy;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _meleeAttackEnemy = GetComponent<MeleeAttackEnemy>();
     }
 
@@ -25,7 +26,7 @@ public class MeleeAttackState : State
     private void Update()
     {
         transform.rotation = Quaternion.Lerp(transform.rotation,
-                           Quaternion.LookRotation(Player.Instance.Position - transform.position), Time.deltaTime * 10);
+                           Quaternion.LookRotation(Player.Instance.Position - transform.position), Time.deltaTime * 1);
         if (_passedTime >= _attackCooldown)
         {
             _passedTime = 0;
