@@ -621,7 +621,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _targetState: {fileID: 5848425325055753842}
   _transitionTime: 2
-  _minDistanceToAct: 0.9
+  _minDistanceToAct: 3
 --- !u!114 &5848425325055753842
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 5101874972828835863}
-  _minTransitionDistance: 0.9
+  _minTransitionDistance: 3
 --- !u!1 &3960582202500475902
 GameObject:
   m_ObjectHideFlags: 0
