@@ -1,6 +1,7 @@
 ﻿using DefaultNamespace.Object_Pooling;
 using DefaultNamespace.Object_Pooling.Interfaces;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 {
@@ -8,10 +9,13 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
     {
         [SerializeField] private PoolManager.EnemyBulletType type;
         [SerializeField] private int _damage;
-        
+        [SerializeField] public AudioClip _hitSound;
+
         protected Rigidbody _rb;
 
-        
+        public static UnityEvent<BaseEnemyBullet> OnBulletHit = new UnityEvent<BaseEnemyBullet>();
+
+
         public virtual void RunBullet(Vector3 velocity)
         {
             if (_rb is null)
