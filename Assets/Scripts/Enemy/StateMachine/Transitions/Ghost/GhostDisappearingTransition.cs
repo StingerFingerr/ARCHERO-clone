@@ -1,14 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
 
-[RequireComponent(typeof(NavMeshAgent))]
-public class RangeEnemyMoveTransition : Transition
+[RequireComponent(typeof(Animator))]
+public class GhostDisappearingTransition : Transition
 {
-    [SerializeField] private float _maxMovingTime;
-
+    [SerializeField] private float _transitionTime;
     private float _passedTime;
+
+    public float TransitionTime { get => _transitionTime; private set => _transitionTime = value; }
 
     protected override void Awake()
     {
@@ -17,15 +17,14 @@ public class RangeEnemyMoveTransition : Transition
 
     private void OnEnable()
     {
+        _passedTime = 0f;
         NeedToTransit = false;
     }
 
-    private void Update()
-    {       
-        if (_navMeshAgent.remainingDistance == 0 || _passedTime >= _maxMovingTime)
+    private void LateUpdate()
+    {
+        if (_passedTime >= TransitionTime)
         {
-            _passedTime = 0;
-            _navMeshAgent.ResetPath();
             NeedToTransit = true;
         }
         _passedTime += Time.deltaTime;

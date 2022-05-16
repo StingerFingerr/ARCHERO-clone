@@ -19,18 +19,16 @@ public class RangeAttackState : State
 
     private void OnEnable()
     {
-        Debug.Log("RangeAttackState On");
         _passedTime = 0;
     }
 
     private void Update()
     {
-        Debug.Log("RangeAttackState Update");
-        transform.rotation = Quaternion.Lerp(transform.rotation,
-                           Quaternion.LookRotation(Player.Instance.Position - transform.position), Time.deltaTime * 10);
+        transform.LookAt(Player.Instance.transform);
+        if (transform.name.Contains("ghost"))
+            Debug.Log($"{transform.name} - {transform.rotation}");
         if (_passedTime >= _attackCooldown)
         {
-            Debug.Log("Должен атаковать");
             Animator.Play("Attacking");
             _thisEnemy.Attack();
             _passedTime = 0;

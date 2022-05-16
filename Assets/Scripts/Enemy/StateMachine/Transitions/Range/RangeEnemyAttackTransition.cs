@@ -18,7 +18,6 @@ public class RangeEnemyAttackTransition : Transition
     {
         if (_passedTime >= _transitionTime)
         {
-            Debug.Log("Range transit attack");
             NeedToTransit = true;
         }
         _passedTime += Time.deltaTime;
