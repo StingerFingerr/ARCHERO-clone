@@ -4,16 +4,15 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class RandomMoveTransition : Transition
+public class RangeEnemyMoveTransition : Transition
 {
     [SerializeField] private float _maxMovingTime;
 
     private float _passedTime;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (_navMeshAgent == null)
-            _navMeshAgent = GetComponent<NavMeshAgent>();
+        base.Awake();
     }
 
     private void OnEnable()
@@ -25,6 +24,10 @@ public class RandomMoveTransition : Transition
     {       
         if (_navMeshAgent.remainingDistance == 0 || _passedTime >= _maxMovingTime)
         {
+            if (_navMeshAgent.remainingDistance == 0)
+                Debug.Log("RangeEnemyMoveTransition of Distance");
+            else
+                Debug.Log("RangeEnemyMoveTransition of time");
             _passedTime = 0;
             _navMeshAgent.ResetPath();
             NeedToTransit = true;

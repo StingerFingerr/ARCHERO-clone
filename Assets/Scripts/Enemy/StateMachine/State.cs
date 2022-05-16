@@ -9,14 +9,16 @@ using UnityEngine.AI;
 public abstract class State : MonoBehaviour
 {
     [SerializeField] private List<Transition> _transitions;
-    protected Transform Target { get; set; }
+    public Transform Target { get; protected set; }
     protected Animator Animator;
     protected NavMeshAgent _navMeshAgent;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         Animator = GetComponent<Animator>();
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        Target = FindObjectOfType<Player>().transform;
+        enabled = false;
     }
 
     public void Enter(Transform target)

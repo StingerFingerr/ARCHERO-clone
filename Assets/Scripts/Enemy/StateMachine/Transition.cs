@@ -10,7 +10,7 @@ public abstract class Transition : MonoBehaviour
     [SerializeField] private State _targetState;
 
     protected NavMeshAgent _navMeshAgent;
-    protected Transform Target { get; private set; }
+    public Transform Target { get; protected set; }
 
     public State TargetState => _targetState;
     public bool NeedToTransit { get; protected set; }
@@ -25,8 +25,9 @@ public abstract class Transition : MonoBehaviour
         NeedToTransit = false;
     }
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
+        enabled = false;
     }
 }
