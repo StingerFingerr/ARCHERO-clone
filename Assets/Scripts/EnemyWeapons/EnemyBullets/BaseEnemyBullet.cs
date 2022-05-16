@@ -17,6 +17,7 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
             if (_rb is null)
                 _rb = GetComponent<Rigidbody>();
 
+            _rb.isKinematic = false;
             _rb.velocity = velocity;
         }
         protected abstract void ResetBullet();

@@ -8,7 +8,9 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
     {
         [SerializeField] private GameObject _fireBallModel;
         [SerializeField] private ParticleSystemController _particleSystemController;
-        
+        [SerializeField] private ParticleSystem _explosionEffects;
+
+
         public override void RunBullet(Vector3 velocity)
         {
             ResetBullet();
@@ -24,6 +26,8 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 
         private void OnTriggerEnter(Collider other)
         {
+            _rb.isKinematic = true;
+            _explosionEffects.Play();
             _fireBallModel.SetActive(false);
             _particleSystemController?.StopEmitting();
             Invoke( nameof(ReturnToPool), 3);
