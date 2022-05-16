@@ -12,6 +12,7 @@ public class RangeMoveState : State
     private void OnEnable()
     {
         _navMeshAgent.SetDestination(GetNewDestination());
+        
     }
 
     private Vector3 GetNewDestination()
@@ -25,7 +26,6 @@ public class RangeMoveState : State
         Vector3 result = transform.position + offset;
         //result.x = Mathf.Clamp(result.x, -5, 5);
         //result.z = Mathf.Clamp(result.z, -8, 8);
-
         return result;
     }
 }

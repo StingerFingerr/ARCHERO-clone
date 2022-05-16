@@ -35,7 +35,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DragonAttacking
+  m_Name: Attacking
   m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
@@ -50,7 +50,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 2f5eb50396f0b4e4ca6639dfe42268ca, type: 2}
-  m_Tag: 
+  m_Tag: Dragon
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -62,7 +62,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DragonDying
+  m_Name: Dying
   m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions:
@@ -77,7 +77,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 75558e1c290c384428dfc9962056b68f, type: 2}
-  m_Tag: 
+  m_Tag: Dragon
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -89,7 +89,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DragonMoving
+  m_Name: Moving
   m_Speed: 0.75
   m_CycleOffset: 0
   m_Transitions: []
@@ -103,7 +103,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: 84fc9d7a5e62abd4e87cbc6af9de4786, type: 2}
-  m_Tag: 
+  m_Tag: Dragon
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 

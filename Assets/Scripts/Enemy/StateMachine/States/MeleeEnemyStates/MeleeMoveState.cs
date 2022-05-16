@@ -6,14 +6,13 @@ using DefaultNamespace;
 
 public class MeleeMoveState : State
 {
-    private void Awake()
+    protected override void Awake()
     {
-        if (_navMeshAgent == null)
-            _navMeshAgent = GetComponent<NavMeshAgent>();
+        base.Awake();
     }
 
     private void OnEnable()
     {
-        _navMeshAgent.SetDestination(Target.position);
+        _navMeshAgent.SetDestination(Player.Instance.transform.position);
     }
 }

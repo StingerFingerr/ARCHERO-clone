@@ -25,7 +25,7 @@ public class MeleeAttackEnemy : EnemyBase
 
     public override void Attack()
     {
-        _animator.Play($"{transform.name}Attack");
+        _animator.Play($"Attacking");
     }
 
     private void OnTriggerEnter(Collider other)

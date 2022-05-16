@@ -54,8 +54,9 @@ public class SceneBuilder : MonoBehaviour
         _portal.SetActive(false);
 
         var sceneSetup = _sceneSetups[0];
+        _navMeshSurface.RemoveData();
 
-        foreach(var obstacleItem in sceneSetup.sceneObstacleItems)
+        foreach (var obstacleItem in sceneSetup.sceneObstacleItems)
         {
             GameObject item = PoolManager.Instance.GetObstacle(obstacleItem.obstacleType);
             item.transform.position = obstacleItem.positon;
@@ -68,7 +69,6 @@ public class SceneBuilder : MonoBehaviour
             _levelItems.Add(item);
         }
 
-        _navMeshSurface.RemoveData();
         _navMeshSurface.BuildNavMesh();
     }
 }

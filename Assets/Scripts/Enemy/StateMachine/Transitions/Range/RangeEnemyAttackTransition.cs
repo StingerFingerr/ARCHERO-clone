@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RandomAttackTransition : Transition
+public class RangeEnemyAttackTransition : Transition
 {
     [SerializeField] private float _transitionTime = 2f;
 
@@ -10,14 +10,15 @@ public class RandomAttackTransition : Transition
 
     private void OnEnable()
     {
-        NeedToTransit = false;
         _passedTime = 0;
+        NeedToTransit = false;
     }
 
     private void Update()
     {
         if (_passedTime >= _transitionTime)
         {
+            Debug.Log("Range transit attack");
             NeedToTransit = true;
         }
         _passedTime += Time.deltaTime;
