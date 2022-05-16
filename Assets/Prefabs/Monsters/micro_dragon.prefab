@@ -390,7 +390,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 4982327746482092970}
-  _maxHealth: 1000
+  _maxHealth: 100
   _attackClip: {fileID: 8300000, guid: be2ee8e6f7bf5d04aa4e861c27aa8a57, type: 3}
   _weapon: {fileID: 11400000, guid: 4b4046c9f82d969489ecc422622b8466, type: 2}
   _reloadingTime: 1.86

@@ -45,8 +45,6 @@ namespace DefaultNamespace.Object_Pooling
         [SerializeField] private List<EnemyPoolObject> _enemyPoolObjects;
         private ObjectPooler<EnemyType> _enemiesPool;
 
-        public List<ITarget> _enemiesOnScene = new List<ITarget>();
-
         private void Awake()
         {
             Instance = this;
@@ -75,9 +73,7 @@ namespace DefaultNamespace.Object_Pooling
         }
         public GameObject GetEnemy(EnemyType enemyType)
         {
-            var enemy = _enemiesPool.GetObjectFromPool(enemyType);
-            _enemiesOnScene.Add(enemy.GetComponent<ITarget>());
-            return enemy;
+            return _enemiesPool.GetObjectFromPool(enemyType);
         }
 
         public GameObject InstantiateObject(GameObject prefab, Transform holder)
