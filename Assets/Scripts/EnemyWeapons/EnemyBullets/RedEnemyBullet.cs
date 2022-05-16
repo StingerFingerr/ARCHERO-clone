@@ -23,6 +23,7 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 
         private void OnTriggerEnter(Collider other)
         {
+            OnBulletHit.Invoke(this);
             ReturnToPool();
         }
     }

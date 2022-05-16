@@ -1,12 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using DefaultNamespace.EnemyWeapons;
+using DefaultNamespace.EnemyWeapons.EnemyBullets;
 using UnityEngine;
 
 [RequireComponent(typeof(AudioSource))]
 public class SoundSystem : MonoBehaviour
 {
+    [SerializeField] private AudioClip _portalEnterSound;
+
     private AudioSource _audioSource;
 
     private void Awake()
@@ -17,17 +17,21 @@ public class SoundSystem : MonoBehaviour
     private void OnEnable()
     {
         BaseEnemyWeapon.OnWeaponShot.AddListener(PlayEnemyAttackClip);
+        BaseEnemyBullet.OnBulletHit.AddListener(PlayBulletHitClip);
+        PlayerHitBox.OnPlayerEntersPortal.AddListener(PlayEnterInPortalClip);
     }
 
 
-    private void PlayEnemyAttackClip(BaseEnemyWeapon weapon)
+    private void PlayEnterInPortalClip() => PlayClip(_portalEnterSound);
+    private void PlayBulletHitClip(BaseEnemyBullet bullet)=> PlayClip(bullet._hitSound);
+    private void PlayEnemyAttackClip(BaseEnemyWeapon weapon) => PlayClip(weapon._shootingSound);
+
+    private void PlayClip(AudioClip clip)
     {
-        if(weapon._shootingSound is null)
+        if (clip is null)
             return;
-        
-        _audioSource.clip = weapon._shootingSound;
+
+        _audioSource.clip = clip;
         _audioSource.Play();
     }
-
-
 }

@@ -30,6 +30,8 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
             _explosionEffects.Play();
             _fireBallModel.SetActive(false);
             _particleSystemController?.StopEmitting();
+            OnBulletHit.Invoke(this);
+
             Invoke( nameof(ReturnToPool), 3);
         }
     }
