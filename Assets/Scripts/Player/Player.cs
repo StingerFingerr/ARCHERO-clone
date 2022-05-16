@@ -1,6 +1,7 @@
 ﻿using DefaultNamespace.Object_Pooling;
 using DefaultNamespace.Player_weapon_system;
 using Enemy;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace DefaultNamespace
@@ -25,12 +26,13 @@ namespace DefaultNamespace
         public static Player Instance;
         public Vector3 Position => transform.position;
 
+        private bool _isGame;
         private Rigidbody _rb;
         private PlayerBow _playerBow;
 
         private Animator _animator;
         private State currentState;
-
+        private List<ITarget> _allTargets;
         private ITarget _nearestTarget;
         
         private void Awake()
@@ -42,10 +44,19 @@ namespace DefaultNamespace
             _playerBow = GetComponent<PlayerBow>();
 
             EnemyBase.OnEnemyKilled.AddListener(CancelTarget);
+            GameManager.OnNextLevelPrepared.AddListener(StartGame);
+        }
+
+        private void StartGame()
+        {
+            _isGame = true;
         }
 
         private void FixedUpdate()
         {
+            if (_isGame is false)
+                return;
+
             Vector3 moveDir = new Vector3(_fixedJoystick.Horizontal, 0, _fixedJoystick.Vertical);
             SetState(moveDir);
 
@@ -119,12 +130,13 @@ namespace DefaultNamespace
                 _nearestTarget = null;
         }
 
-        public bool TryGetNearestTarget(out ITarget nearestTarget)
+        public void SetTargets(List<ITarget> targets) => _allTargets = targets;
+        private bool TryGetNearestTarget(out ITarget nearestTarget)
         {
             float minDistance = float.MaxValue;
             nearestTarget = null;
 
-            foreach (var target in PoolManager.Instance._enemiesOnScene)
+            foreach (var target in _allTargets)
             {
                 if (target is null) continue;
                 if (target.IsAlive)

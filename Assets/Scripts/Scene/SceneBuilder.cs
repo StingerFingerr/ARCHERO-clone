@@ -3,6 +3,7 @@ using UnityEngine;
 using DefaultNamespace.Object_Pooling;
 using System.Collections.Generic;
 using System;
+using Enemy;
 
 [RequireComponent(typeof(NavMeshSurface))]
 public class SceneBuilder : MonoBehaviour
@@ -35,12 +36,6 @@ public class SceneBuilder : MonoBehaviour
     private void Awake()
     {
         _navMeshSurface = GetComponent<NavMeshSurface>();
-
-        
-    }
-    private void Start()
-    {
-        CreateLevel();
     }
 
     public void OpenPortal()
@@ -48,13 +43,18 @@ public class SceneBuilder : MonoBehaviour
         _portal.SetActive(true);
     }
 
-    public void CreateLevel()
+    public List<ITarget> CreateLevel(int level = 1)
     {
+        List<ITarget> targets = new List<ITarget>();
+
+        foreach (var levelItem in _levelItems)
+            levelItem.SetActive(false);
         _levelItems.Clear();
+
         _portal.SetActive(false);
 
         var sceneSetup = _sceneSetups[0];
-        _navMeshSurface.RemoveData();
+        //_navMeshSurface.RemoveData();
 
         foreach (var obstacleItem in sceneSetup.sceneObstacleItems)
         {
@@ -66,9 +66,12 @@ public class SceneBuilder : MonoBehaviour
         {
             GameObject item = PoolManager.Instance.GetEnemy(enemyItem.enemyType);
             item.transform.position = enemyItem.position;
+            targets.Add(item.GetComponent<ITarget>());
             _levelItems.Add(item);
         }
 
         _navMeshSurface.BuildNavMesh();
+
+        return targets;
     }
 }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3487697260596921936}
   - component: {fileID: 3487697260596921942}
   - component: {fileID: 3487697260596921943}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: DarkBeam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4881,11 +4881,12 @@ GameObject:
   - component: {fileID: 3487697261574385733}
   - component: {fileID: 3487697261574385734}
   - component: {fileID: 3487697261574385735}
-  - component: {fileID: 3487697261574385728}
   - component: {fileID: -749691224176265490}
-  m_Layer: 0
+  - component: {fileID: 6371552413326348219}
+  - component: {fileID: 3116671335965654509}
+  m_Layer: 13
   m_Name: Portal
-  m_TagString: Untagged
+  m_TagString: Portal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4957,20 +4958,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &3487697261574385728
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3487697261574385729}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!82 &-749691224176265490
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5067,6 +5054,39 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &6371552413326348219
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487697261574385729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 6, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &3116671335965654509
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3487697261574385729}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0e1e9d47a6aadbe4bac463c3fe8c6db3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3487697262081591635
 GameObject:
   m_ObjectHideFlags: 0
@@ -5078,7 +5098,7 @@ GameObject:
   - component: {fileID: 3487697262081591634}
   - component: {fileID: 3487697262081591632}
   - component: {fileID: 3487697262081591633}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
