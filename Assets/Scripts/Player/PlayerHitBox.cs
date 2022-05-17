@@ -5,6 +5,7 @@ using UnityEngine.Events;
 
 public class PlayerHitBox : MonoBehaviour
 {
+    [SerializeField] private UIManager _UIManager;
     [SerializeField] private int _playerHealth;
     private int _remainingHealth;
 
@@ -21,6 +22,7 @@ public class PlayerHitBox : MonoBehaviour
     private void ResetOnStartLevel()
     {
         _remainingHealth = _playerHealth;
+        _UIManager.UpdatePlayerHP(1f);
     }
 
     public void SetDamage(int damage)
@@ -29,6 +31,7 @@ public class PlayerHitBox : MonoBehaviour
             return;
 
         _remainingHealth -= damage;
+        _UIManager.UpdatePlayerHP(_remainingHealth / 1f / _playerHealth);
         OnPlayerDamaged.Invoke();
 
         if (_remainingHealth <= 0)

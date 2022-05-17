@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RangeAttackState : State
 {
+    [SerializeField] private float _delayStartingBullet = 0.5f;
     [SerializeField] private float _attackCooldown = 3f;
 
     private EnemyBase _thisEnemy;
@@ -19,22 +20,26 @@ public class RangeAttackState : State
 
     private void OnEnable()
     {
-        Debug.Log("RangeAttackState On");
         _passedTime = 0;
     }
 
     private void Update()
     {
-        Debug.Log("RangeAttackState Update");
-        transform.rotation = Quaternion.Lerp(transform.rotation,
-                           Quaternion.LookRotation(Player.Instance.Position - transform.position), Time.deltaTime * 10);
+        transform.LookAt(Player.Instance.transform);
+        transform.eulerAngles = Vector3.up * transform.eulerAngles.y;
+
         if (_passedTime >= _attackCooldown)
         {
-            Debug.Log("Должен атаковать");
             Animator.Play("Attacking");
-            _thisEnemy.Attack();
+            StartCoroutine(AttackWithDelay());
             _passedTime = 0;
         }
         _passedTime += Time.deltaTime;
+    }
+
+    private IEnumerator AttackWithDelay()
+    {
+        yield return new WaitForSeconds(_delayStartingBullet);
+        _thisEnemy.Attack();
     }
 }

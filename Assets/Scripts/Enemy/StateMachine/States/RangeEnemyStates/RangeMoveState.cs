@@ -24,8 +24,6 @@ public class RangeMoveState : State
         offset.z = Random.Range(-_verticalWalkingRadius, _verticalWalkingRadius);
 
         Vector3 result = transform.position + offset;
-        //result.x = Mathf.Clamp(result.x, -5, 5);
-        //result.z = Mathf.Clamp(result.z, -8, 8);
         return result;
     }
 }

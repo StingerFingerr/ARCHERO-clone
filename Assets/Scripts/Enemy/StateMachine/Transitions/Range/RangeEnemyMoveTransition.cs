@@ -24,10 +24,6 @@ public class RangeEnemyMoveTransition : Transition
     {       
         if (_navMeshAgent.remainingDistance == 0 || _passedTime >= _maxMovingTime)
         {
-            if (_navMeshAgent.remainingDistance == 0)
-                Debug.Log("RangeEnemyMoveTransition of Distance");
-            else
-                Debug.Log("RangeEnemyMoveTransition of time");
             _passedTime = 0;
             _navMeshAgent.ResetPath();
             NeedToTransit = true;
