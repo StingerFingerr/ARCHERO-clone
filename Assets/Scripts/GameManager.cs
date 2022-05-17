@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         }
         _level++;
         _enemiesOnScene = _sceneBuilder.CreateLevel(_level);
+        _enemiesCountOnScene = _enemiesOnScene.Count;
         _player.SetTargets(_enemiesOnScene);
         _player.transform.position = _playerStartPos;
         OnNextLevelPrepared.Invoke();

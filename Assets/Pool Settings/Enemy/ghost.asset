@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3c0ea9dc33ee6a14fac0d35ab04356a8, type: 3}
-  m_Name: EnemyPoolObjectSettings
+  m_Name: ghost
   m_EditorClassIdentifier: 
-  objectPrefab: {fileID: 6723391975674867467, guid: 9c608ca8f0d58494bb1b6ddade0a6ec5,
+  objectPrefab: {fileID: 3108403618856324755, guid: e726ed0fa61eb3246b1420094492c148,
     type: 3}
-  startCapacity: 2
-  enemyType: 0
+  startCapacity: 0
+  enemyType: 2

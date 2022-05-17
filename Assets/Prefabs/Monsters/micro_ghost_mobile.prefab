@@ -23,14 +23,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762027113}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: -0.17364825, y: 0, z: 0, w: 0.9848078}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3108403618856817327}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -20, y: 0, z: 0}
 --- !u!1 &1227119330
 GameObject:
   m_ObjectHideFlags: 0
@@ -574,7 +574,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3108403618856324755}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.68, y: 0, z: -8.04}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -598,7 +598,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: e313506ca247db344aa32aba488ecc0f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -618,7 +618,7 @@ NavMeshAgent:
   m_Speed: 3.5
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
@@ -642,7 +642,7 @@ MonoBehaviour:
   _healthBar: {fileID: 5806207740596586916}
   _maxHealth: 100
   _attackClip: {fileID: 0}
-  _weapon: {fileID: 11400000, guid: 4b4046c9f82d969489ecc422622b8466, type: 2}
+  _weapon: {fileID: 11400000, guid: 71f857c58cc013e4685a7a1716fba894, type: 2}
   _reloadingTime: 0
   weaponTransform: {fileID: 762027114}
 --- !u!114 &3108403618856421431
@@ -672,7 +672,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 3108403618856421429}
-  _attackCooldown: 3
+  _attackCooldown: 2
 --- !u!114 &3108403618856421429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 352827300}
-  _transitionTime: 2
+  _transitionTime: 3
 --- !u!114 &2112208083814644297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -713,6 +713,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _targetState: {fileID: 3964046827859131568}
+  _transitionTime: 2
 --- !u!114 &3964046827859131568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -727,9 +728,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 2112208083814644297}
-  _body: {fileID: 3108403618856324753}
-  _horizontalWalkingRadius: 2.82
-  _verticalWalkingRadius: 2.52
+  _horizontalWalkingRadius: 5
+  _verticalWalkingRadius: 4.9
 --- !u!114 &352827300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -744,7 +744,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: -7006590212176806557}
-  _body: {fileID: 3108403618856324753}
 --- !u!1 &3108403618856324757
 GameObject:
   m_ObjectHideFlags: 0
