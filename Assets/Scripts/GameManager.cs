@@ -17,7 +17,7 @@ public class GameManager : MonoBehaviour
     private List<ITarget> _enemiesOnScene = new List<ITarget>();
 
     public static UnityEvent OnGameStarted = new UnityEvent();
-    public static UnityEvent OnNextLevelPrepared = new UnityEvent();
+    public static UnityEvent<int> OnNextLevelPrepared = new UnityEvent<int>();
     
     private void Awake()
     {
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
         _enemiesCountOnScene = _enemiesOnScene.Count;
         _player.SetTargets(_enemiesOnScene);
         _player.transform.position = _playerStartPos;
-        OnNextLevelPrepared.Invoke();
+        OnNextLevelPrepared.Invoke(_level); ;
     }
 
     private void GameOver()

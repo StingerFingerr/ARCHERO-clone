@@ -15,7 +15,19 @@ public class MeleeAttackEnemy : EnemyBase
 
     private void Awake()
     {
+        base.Awake();
         _animator = GetComponent<Animator>();
+        GameManager.OnGameStarted.AddListener(ResetOnGameStart);
+        GameManager.OnNextLevelPrepared.AddListener(Upgrade);
+    }
+
+    private void ResetOnGameStart()
+    {
+        _currentMaxHealth = _maxHealth;
+    }
+    private void Upgrade(int level)
+    {
+        _currentMaxHealth *= 1.15f;
     }
 
     private void OnEnable()

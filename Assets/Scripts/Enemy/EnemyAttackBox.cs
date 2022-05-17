@@ -7,13 +7,17 @@ using UnityEngine;
 
 namespace Assets.Scripts.Enemy
 {
-    class EnemyHitBox: MonoBehaviour
+    class EnemyAttackBox: MonoBehaviour
     {
         [SerializeField] private int _damage = 12;
+
         private void OnTriggerEnter(Collider other)
         {
             if (other.TryGetComponent<PlayerHitBox>(out PlayerHitBox player))
+            {
                 player.SetDamage(_damage);
+                gameObject.SetActive(false);
+            }                      
         }
     }
 }

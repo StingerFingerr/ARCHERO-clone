@@ -48,7 +48,7 @@ namespace DefaultNamespace
             PlayerHitBox.OnPlayerKilled.AddListener(PlayerDied);
         }
 
-        private void StartGame()
+        private void StartGame(int level)
         {
             _isGame = true;
             _animator.SetTrigger(nameof(State.Idle));

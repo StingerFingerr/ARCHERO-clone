@@ -640,10 +640,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 5806207740596586916}
-  _maxHealth: 100
+  _maxHealth: 30
   _attackClip: {fileID: 0}
   _weapon: {fileID: 11400000, guid: 71f857c58cc013e4685a7a1716fba894, type: 2}
-  _reloadingTime: 2
   weaponTransform: {fileID: 762027114}
 --- !u!114 &3108403618856421431
 MonoBehaviour:
