@@ -17,10 +17,11 @@ namespace DefaultNamespace.EnemyWeapons
             PoolManager.Instance.StartCoroutine(FireBurst(weaponTransform));
         }
 
-        IEnumerator FireBurst(Transform weaponTransform)
+        private IEnumerator FireBurst(Transform weaponTransform)
         {
             for (int i = 0; i < countInBurst; i++)
             {
+                OnWeaponShot.Invoke(this);
                 ShootBullet(weaponTransform);
                 yield return new WaitForSeconds(_reloadTimeBetweenShots);
             }

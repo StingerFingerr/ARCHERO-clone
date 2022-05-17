@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf420a43c781427eb8dd9524c1ea5e19, type: 3}
   m_Name: SingleEnemyWeapon
   m_EditorClassIdentifier: 
+  _shootingSound: {fileID: 8300000, guid: 21c9405d239bc274abf800931f2283ca, type: 3}
   bulletType: 0
-  _spreadRadius: 0.3
+  _spreadRadius: 0.5

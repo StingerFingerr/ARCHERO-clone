@@ -10,6 +10,7 @@ namespace DefaultNamespace.EnemyWeapons
     {
         public override void Fire(Transform weaponTransform)
         {
+            OnWeaponShot.Invoke(this);
             ShootBullet(weaponTransform);
         }
     }
