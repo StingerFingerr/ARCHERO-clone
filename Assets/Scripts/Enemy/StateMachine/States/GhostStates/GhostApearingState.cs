@@ -17,7 +17,6 @@ public class GhostApearingState : State
     {
         Vector3 newPosition = GetNewDestination();
         transform.position = newPosition;
-        Debug.Log($"newPosition = {newPosition}");
         if (Animator == null)
             Animator = GetComponent<Animator>();
         Animator.Play("Appearing");

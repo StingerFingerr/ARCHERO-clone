@@ -16,8 +16,7 @@ public class EnemyStateMachine : MonoBehaviour
     private void Start()
     {
         _target = GetComponent<EnemyBase>().GetTarget().transform;
-        if (_target == null)
-            Debug.Log("SosiPisos");
+       
         Reset(_firstState);
     }
 
