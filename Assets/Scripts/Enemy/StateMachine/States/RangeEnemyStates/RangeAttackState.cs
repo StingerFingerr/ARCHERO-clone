@@ -27,7 +27,7 @@ public class RangeAttackState : State
     {
         Vector3 dir = (Player.Instance.transform.position - transform.position).normalized;
         Quaternion lookRot = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
-        transform.rotation = Quaternion.Lerp(transform.rotation, lookRot, Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRot, Time.deltaTime*10);
 
 
         if (_passedTime >= _attackCooldown)

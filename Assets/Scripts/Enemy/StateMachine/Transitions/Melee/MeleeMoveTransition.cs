@@ -7,6 +7,12 @@ public class MeleeMoveTransition : Transition
 {
     [SerializeField] private float _minTransitionDistance = 0.9f;
 
+    private void OnEnable()
+    {
+        _navMeshAgent.SetDestination(Target.position);
+        NeedToTransit = false;
+    }
+
     private void Update()
     {
         if (_navMeshAgent.remainingDistance <= _minTransitionDistance)

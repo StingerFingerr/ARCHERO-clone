@@ -12,13 +12,20 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
 
     [SerializeField] protected EnemyHpBar _healthBar;
     [SerializeField] protected int _maxHealth;
+    protected float _currentMaxHealth;
+    protected float _currentHealth;
     [SerializeField] public AudioClip _attackClip;
     
-    protected int _currentHealth;
+
     protected bool _isAlive;
     public abstract bool IsVisible { get; set; }
     
     public static readonly TargetEvent OnEnemyKilled = new TargetEvent();
+
+    protected void Awake()
+    {
+        _currentMaxHealth = _maxHealth;
+    }
 
     public abstract void Attack();
 
@@ -57,7 +64,7 @@ public abstract class EnemyBase : MonoBehaviour, ITarget, IDamaged
 
     protected void ResetOnEnable()
     {
-        _currentHealth = _maxHealth;
+        _currentHealth = _currentMaxHealth;
         _isAlive = true;
         IsVisible = true;
     }

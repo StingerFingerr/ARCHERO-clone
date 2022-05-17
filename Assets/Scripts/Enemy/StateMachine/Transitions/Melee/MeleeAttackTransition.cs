@@ -5,7 +5,7 @@ using DefaultNamespace;
 
 public class MeleeAttackTransition : Transition
 {
-    [SerializeField] private float _transitionTime =2f;
+    [SerializeField] private float _transitionTime = 2f;
     [SerializeField] private float _minDistanceToAct = 0.9f;
     private float _passedTime = 0f;
 
@@ -16,11 +16,10 @@ public class MeleeAttackTransition : Transition
 
     private void OnEnable()
     {
+        NeedToTransit = false;
         _passedTime = 0f;
         if (Target == null)
             Target = FindObjectOfType<Player>().transform;
-        if (Vector3.Distance(transform.position, Target.position) > _minDistanceToAct)
-            NeedToTransit = true;
     }
 
     private void Update()
@@ -28,6 +27,7 @@ public class MeleeAttackTransition : Transition
         if (_passedTime >= _transitionTime)
         {
             NeedToTransit = true;
+            _passedTime = 0f;
         }
         _passedTime += Time.deltaTime;
     }

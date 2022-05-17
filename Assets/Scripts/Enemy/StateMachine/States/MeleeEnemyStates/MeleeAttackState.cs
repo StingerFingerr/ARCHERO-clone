@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Assets.Scripts.Enemy;
 using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.AI;
@@ -7,6 +8,8 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class MeleeAttackState : State
 {
+
+    [SerializeField] private GameObject _attackCollider;
     [SerializeField] private float _attackCooldown = 1f;
     private float _passedTime = 0;
     private MeleeAttackEnemy _meleeAttackEnemy;
@@ -20,6 +23,7 @@ public class MeleeAttackState : State
     private void OnEnable()
     {
         _passedTime = 0;
+        _attackCollider.SetActive(true);
         _meleeAttackEnemy.Attack();
     }
 
@@ -31,6 +35,7 @@ public class MeleeAttackState : State
         {
             _passedTime = 0;
             _meleeAttackEnemy.Attack();
+            _attackCollider.SetActive(true);
         }
         _passedTime += Time.deltaTime;
     }

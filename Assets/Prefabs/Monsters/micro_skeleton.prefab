@@ -44,8 +44,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.5, z: 1.5}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5, z: 1.8968728}
+  m_Center: {x: 0, y: 0, z: -0.19843638}
 --- !u!114 &8209556060067961012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthBar: {fileID: 5296473926994126367}
-  _maxHealth: 100
-  _attackClip: {fileID: 0}
+  _maxHealth: 30
+  _attackClip: {fileID: 8300000, guid: 47e1db779326bfd4e934704ac6c1f70c, type: 3}
 --- !u!114 &529463801419616553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,7 +667,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitions:
   - {fileID: 916770387839979368}
-  _attackCooldown: 1
+  _attackCollider: {fileID: 599821957397913293}
+  _attackCooldown: 2
 --- !u!114 &916770387839979368
 MonoBehaviour:
   m_ObjectHideFlags: 0
