@@ -35,6 +35,7 @@ public class GameManager : MonoBehaviour
         OpenNextLevel();
         await Task.Delay(900);
         _UIManager.CloseMenuPanel();
+        _UIManager.CloseGameOverPanel();
     }
 
     private void DecrementEnemiesCount(ITarget targer)
@@ -65,6 +66,6 @@ public class GameManager : MonoBehaviour
 
     private void GameOver()
     {
-
+        _UIManager.OpenGameOverPanel();
     }
 }
