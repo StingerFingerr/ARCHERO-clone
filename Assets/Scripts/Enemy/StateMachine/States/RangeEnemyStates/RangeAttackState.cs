@@ -25,8 +25,10 @@ public class RangeAttackState : State
 
     private void Update()
     {
-        transform.LookAt(Player.Instance.transform);
-        //transform.eulerAngles = Vector3.up * transform.eulerAngles.y;
+        Vector3 dir = (Player.Instance.transform.position - transform.position).normalized;
+        Quaternion lookRot = Quaternion.LookRotation(new Vector3(dir.x, 0, dir.z));
+        transform.rotation = Quaternion.Lerp(transform.rotation, lookRot, Time.deltaTime);
+
 
         if (_passedTime >= _attackCooldown)
         {
