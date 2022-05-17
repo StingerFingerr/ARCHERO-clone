@@ -12,7 +12,8 @@ namespace DefaultNamespace.Object_Pooling
         public enum EnemyType
         {
             Dragon,
-            Skeleton
+            Skeleton,
+            Ghost
         }
         public enum EnemyBulletType
         {

@@ -23,6 +23,9 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
 
         private void OnTriggerEnter(Collider other)
         {
+            if (other.TryGetComponent<PlayerHitBox>(out PlayerHitBox player))
+                player.SetDamage(_damage);
+
             OnBulletHit.Invoke(this);
             ReturnToPool();
         }
