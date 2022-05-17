@@ -54,7 +54,7 @@ public class SceneBuilder : MonoBehaviour
         _portal.SetActive(false);
 
         var sceneSetup = _sceneSetups[0];
-        //_navMeshSurface.RemoveData();
+        _navMeshSurface.RemoveData();
 
         foreach (var obstacleItem in sceneSetup.sceneObstacleItems)
         {

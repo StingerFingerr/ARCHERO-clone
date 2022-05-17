@@ -9,9 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf420a43c781427eb8dd9524c1ea5e19, type: 3}
-  m_Name: SingleEnemyWeapon
+  m_Script: {fileID: 11500000, guid: 3c0ea9dc33ee6a14fac0d35ab04356a8, type: 3}
+  m_Name: dragon
   m_EditorClassIdentifier: 
-  _shootingSound: {fileID: 8300000, guid: 21c9405d239bc274abf800931f2283ca, type: 3}
-  bulletType: 0
-  _spreadRadius: 0.1
+  objectPrefab: {fileID: 6723391975674867467, guid: 9c608ca8f0d58494bb1b6ddade0a6ec5,
+    type: 3}
+  startCapacity: 2
+  enemyType: 0

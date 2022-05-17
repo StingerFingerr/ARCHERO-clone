@@ -8,7 +8,7 @@ namespace DefaultNamespace.EnemyWeapons.EnemyBullets
     public abstract class BaseEnemyBullet: MonoBehaviour, ILaunchedBullet, IReturnedToPool
     {
         [SerializeField] private PoolManager.EnemyBulletType type;
-        [SerializeField] private int _damage;
+        [SerializeField] protected int _damage;
         [SerializeField] public AudioClip _hitSound;
 
         protected Rigidbody _rb;

@@ -8,7 +8,7 @@ namespace DefaultNamespace
         {
             public static Vector3 GetVelocity(Transform weaponTransform, float spreadRadius)
             {
-                Vector3 dir = Player.Instance.Position - weaponTransform.position;
+                Vector3 dir = Player.Instance.Position + Vector3.up - weaponTransform.position;
                 Vector3 dirXZ = new Vector3(dir.x, 0, dir.z);
                 
                 float x = dirXZ.magnitude;

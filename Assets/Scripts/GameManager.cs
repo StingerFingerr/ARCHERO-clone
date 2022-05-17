@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         PlayerHitBox.OnPlayerEntersPortal.AddListener(OpenNextLevel);
         PlayerHitBox.OnPlayerKilled.AddListener(GameOver);
 
-        
+        _UIManager.OpenMenuPanel();
     }
 
     
@@ -57,6 +57,7 @@ public class GameManager : MonoBehaviour
         }
         _level++;
         _enemiesOnScene = _sceneBuilder.CreateLevel(_level);
+        _enemiesCountOnScene = _enemiesOnScene.Count;
         _player.SetTargets(_enemiesOnScene);
         _player.transform.position = _playerStartPos;
         OnNextLevelPrepared.Invoke();

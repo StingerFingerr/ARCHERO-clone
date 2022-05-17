@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _shootingSound: {fileID: 8300000, guid: 1112032426e08ec4c9bd67217a52fe20, type: 3}
   bulletType: 1
-  _spreadRadius: 1
+  _spreadRadius: 0
