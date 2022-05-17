@@ -26,7 +26,7 @@ public class RangeAttackState : State
     private void Update()
     {
         transform.LookAt(Player.Instance.transform);
-        transform.eulerAngles = Vector3.up * transform.eulerAngles.y;
+        //transform.eulerAngles = Vector3.up * transform.eulerAngles.y;
 
         if (_passedTime >= _attackCooldown)
         {

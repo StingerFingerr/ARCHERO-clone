@@ -16,7 +16,8 @@ public class PlayerHitBox : MonoBehaviour
 
     private void Awake()
     {
-        GameManager.OnNextLevelPrepared.AddListener(ResetOnStartLevel);
+        GameManager.OnGameStarted.AddListener(ResetOnStartLevel);
+        //GameManager.OnNextLevelPrepared.AddListener(ResetOnStartLevel);
     }
 
     private void ResetOnStartLevel()
