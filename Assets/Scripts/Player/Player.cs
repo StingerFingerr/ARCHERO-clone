@@ -45,11 +45,19 @@ namespace DefaultNamespace
 
             EnemyBase.OnEnemyKilled.AddListener(CancelTarget);
             GameManager.OnNextLevelPrepared.AddListener(StartGame);
+            PlayerHitBox.OnPlayerKilled.AddListener(PlayerDied);
         }
 
         private void StartGame()
         {
             _isGame = true;
+            _animator.SetTrigger(nameof(State.Idle));
+        }
+        private void PlayerDied()
+        {
+            _isGame = false;
+            _animator.SetTrigger(nameof(State.Death));
+
         }
 
         private void FixedUpdate()
@@ -121,7 +129,7 @@ namespace DefaultNamespace
                 _targetMarker.SetActive(false);
             }            
             if(previousState!=currentState)
-                _animator.SetTrigger(currentState.ToString());
+                _animator.SetTrigger(nameof(currentState));
         }
 
         private void CancelTarget(ITarget target)

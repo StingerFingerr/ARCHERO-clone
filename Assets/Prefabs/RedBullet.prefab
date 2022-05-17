@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  _damage: 0
+  _damage: 5
   _hitSound: {fileID: 8300000, guid: 47e1db779326bfd4e934704ac6c1f70c, type: 3}
 --- !u!54 &3058803008020081180
 Rigidbody:

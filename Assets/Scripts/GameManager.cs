@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
         PlayerHitBox.OnPlayerEntersPortal.AddListener(OpenNextLevel);
         PlayerHitBox.OnPlayerKilled.AddListener(GameOver);
 
-        
+        _UIManager.OpenMenuPanel();
     }
 
     

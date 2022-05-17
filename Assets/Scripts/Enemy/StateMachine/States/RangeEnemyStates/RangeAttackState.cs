@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class RangeAttackState : State
 {
+    [SerializeField] private float _delayStartingBullet = 0.5f;
     [SerializeField] private float _attackCooldown = 3f;
 
     private EnemyBase _thisEnemy;
@@ -25,14 +26,18 @@ public class RangeAttackState : State
     private void Update()
     {
         transform.LookAt(Player.Instance.transform);
-        if (transform.name.Contains("ghost"))
-            Debug.Log($"{transform.name} - {transform.rotation}");
         if (_passedTime >= _attackCooldown)
         {
             Animator.Play("Attacking");
-            _thisEnemy.Attack();
+            StartCoroutine(AttackWithDelay());
             _passedTime = 0;
         }
         _passedTime += Time.deltaTime;
+    }
+
+    private IEnumerator AttackWithDelay()
+    {
+        yield return new WaitForSeconds(_delayStartingBullet);
+        _thisEnemy.Attack();
     }
 }
