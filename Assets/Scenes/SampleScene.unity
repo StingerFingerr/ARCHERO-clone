@@ -4203,19 +4203,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sceneSetups:
   - sceneObstacleItems:
-    - obstacleType: 0
-      positon: {x: -3, y: 1, z: 3}
-    - obstacleType: 0
-      positon: {x: 3, y: 1, z: 3}
     - obstacleType: 1
       positon: {x: 0, y: 1, z: 0}
     sceneEnemyItems:
-    - enemyType: 0
-      position: {x: 0, y: 0.5, z: -3}
+    - enemyType: 1
+      position: {x: -3, y: 0.5, z: 8}
     - enemyType: 2
-      position: {x: -3, y: 0.5, z: 10}
+      position: {x: 3, y: 0.5, z: 8}
+  - sceneObstacleItems:
+    - obstacleType: 1
+      positon: {x: -1, y: 1, z: 0}
+    - obstacleType: 1
+      positon: {x: 1, y: 1, z: 3}
+    sceneEnemyItems:
+    - enemyType: 1
+      position: {x: -3, y: 0.5, z: 8}
+    - enemyType: 1
+      position: {x: 3, y: 0.5, z: 8}
+    - enemyType: 2
+      position: {x: 0, y: 0.5, z: 10}
+  - sceneObstacleItems:
+    - obstacleType: 0
+      positon: {x: -1, y: 1, z: -3}
+    - obstacleType: 0
+      positon: {x: 1, y: 1, z: 3}
+    sceneEnemyItems:
+    - enemyType: 1
+      position: {x: -3, y: 0.5, z: 8}
+    - enemyType: 1
+      position: {x: 3, y: 0.5, z: 8}
+    - enemyType: 2
+      position: {x: -2, y: 0.5, z: 10}
+    - enemyType: 2
+      position: {x: 2, y: 0.5, z: 10}
+  - sceneObstacleItems:
+    - obstacleType: 0
+      positon: {x: -1, y: 1, z: -3}
+    - obstacleType: 0
+      positon: {x: 1, y: 1, z: 3}
+    sceneEnemyItems:
+    - enemyType: 1
+      position: {x: -3, y: 0.5, z: 8}
     - enemyType: 0
-      position: {x: 3, y: 0.5, z: 10}
+      position: {x: 3, y: 0.5, z: 8}
+    - enemyType: 2
+      position: {x: -2, y: 0.5, z: 10}
+    - enemyType: 2
+      position: {x: 2, y: 0.5, z: 10}
+  - sceneObstacleItems:
+    - obstacleType: 0
+      positon: {x: -1, y: 1, z: -3}
+    - obstacleType: 0
+      positon: {x: 1, y: 1, z: 3}
+    sceneEnemyItems:
+    - enemyType: 0
+      position: {x: -3, y: 0.5, z: 8}
+    - enemyType: 1
+      position: {x: 3, y: 0.5, z: 8}
+    - enemyType: 2
+      position: {x: -2, y: 0.5, z: 10}
+    - enemyType: 2
+      position: {x: 2, y: 0.5, z: 10}
+    - enemyType: 0
+      position: {x: 2, y: 0.5, z: 10}
+  - sceneObstacleItems:
+    - obstacleType: 0
+      positon: {x: -1, y: 1, z: -3}
+    - obstacleType: 0
+      positon: {x: 1, y: 1, z: 3}
+    sceneEnemyItems:
+    - enemyType: 1
+      position: {x: -3, y: 0.5, z: 8}
+    - enemyType: 1
+      position: {x: 3, y: 0.5, z: 8}
+    - enemyType: 0
+      position: {x: -2, y: 0.5, z: 10}
+    - enemyType: 2
+      position: {x: 2, y: 0.5, z: 10}
+    - enemyType: 0
+      position: {x: 2, y: 0.5, z: 10}
+    - enemyType: 1
+      position: {x: 2, y: 0.5, z: 10}
   _portal: {fileID: 1219309216}
 --- !u!114 &1868506413
 MonoBehaviour:

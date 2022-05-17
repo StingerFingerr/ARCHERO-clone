@@ -16,8 +16,9 @@ public class GameManager : MonoBehaviour
     private int _enemiesCountOnScene;
     private List<ITarget> _enemiesOnScene = new List<ITarget>();
 
+    public static UnityEvent OnGameStarted = new UnityEvent();
     public static UnityEvent OnNextLevelPrepared = new UnityEvent();
-
+    
     private void Awake()
     {
         EnemyBase.OnEnemyKilled.AddListener(DecrementEnemiesCount);
@@ -36,6 +37,8 @@ public class GameManager : MonoBehaviour
         await Task.Delay(900);
         _UIManager.CloseMenuPanel();
         _UIManager.CloseGameOverPanel();
+
+        OnGameStarted.Invoke();
     }
 
     private void DecrementEnemiesCount(ITarget targer)

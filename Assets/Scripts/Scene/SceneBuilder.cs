@@ -4,6 +4,7 @@ using DefaultNamespace.Object_Pooling;
 using System.Collections.Generic;
 using System;
 using Enemy;
+using System.Threading.Tasks;
 
 [RequireComponent(typeof(NavMeshSurface))]
 public class SceneBuilder : MonoBehaviour
@@ -36,6 +37,7 @@ public class SceneBuilder : MonoBehaviour
     private void Awake()
     {
         _navMeshSurface = GetComponent<NavMeshSurface>();
+        PlayerHitBox.OnPlayerKilled.AddListener(ClearScene);
     }
 
     public void OpenPortal()
@@ -43,6 +45,12 @@ public class SceneBuilder : MonoBehaviour
         _portal.SetActive(true);
     }
 
+    private async void ClearScene()
+    {
+        await Task.Delay(1000);
+        foreach (var item in _levelItems)
+            item.SetActive(false);
+    }
     public List<ITarget> CreateLevel(int level = 1)
     {
         List<ITarget> targets = new List<ITarget>();
@@ -53,7 +61,8 @@ public class SceneBuilder : MonoBehaviour
 
         _portal.SetActive(false);
 
-        var sceneSetup = _sceneSetups[0];
+        var sceneSetup = _sceneSetups[level-1];       
+
         _navMeshSurface.RemoveData();
 
         foreach (var obstacleItem in sceneSetup.sceneObstacleItems)
